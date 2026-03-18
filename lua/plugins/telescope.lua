@@ -29,6 +29,22 @@ return {
             vim.keymap.set("n", "<leader>fb", builtin.buffers)
             vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 
+            vim.keymap.set("n", "<leader>fs", function()
+                builtin.lsp_document_symbols({
+                    -- 核心过滤：只看架构层级的符号
+                    symbols = {
+                        "Class",
+                        "Function",
+                        "Method",
+                        "Constructor",
+                        "Interface",
+                        "Module",
+                        "Struct",
+                    },
+                    initial_mode = "normal",
+                })
+            end, { desc = "Find Symbols (No Variables)" })
+
         end,
     },
 

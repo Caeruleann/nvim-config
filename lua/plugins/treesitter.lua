@@ -14,7 +14,7 @@ return {
   
         -- 2. 【核心修复】手动强制开启高亮引擎
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = { "python", "lua", "c", "cpp" },
+            pattern = { "python", "lua", "c", "cpp", "mlir" },
             callback = function()
                 vim.schedule(function()
                     if not vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then

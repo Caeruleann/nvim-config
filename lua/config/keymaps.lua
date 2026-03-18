@@ -13,6 +13,7 @@ vim.keymap.set("n", "<C-e>", function()
     vim.diagnostic.open_float(0, {focusable = false})
 end)
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
+vim.keymap.set("n", "<Esc>", "<cmd>noh<CR><Esc>", { silent = true })
 
 -- 使用全局自动命令，当 LSP 连接时自动绑定快捷键
 vim.api.nvim_create_autocmd('LspAttach', {
